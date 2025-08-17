@@ -1,0 +1,87 @@
+@import "@nuxt/ui";
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+  font-family: "Barlow", sans-serif;
+}
+
+h1,
+h2 {
+  font-family: "Barlow Condensed", sans-serif;
+}
+
+.barlow-condensed {
+  font-family: "Barlow Condensed", sans-serif;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Inter", sans-serif;
+}
+
+.hero h1,
+.hero-heading {
+  font-family: "Inter", sans-serif;
+  font-weight: 900;
+}
+
+/* ================ */
+/* Custom Tekfolio Cursors - DISABLED */
+/* ================ */
+/*
+* {
+  cursor: url("/cursors/square-mouse-pointer.svg") 12 12, auto;
+}
+
+/* Interactive elements */
+/*
+a,
+button,
+[role="button"],
+.clickable,
+input[type="submit"],
+input[type="button"],
+.nuxt-link-active,
+.router-link-active {
+  cursor: url("/cursors/pointer.svg") 12 12, pointer;
+}
+
+/* Input fields */
+/*
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+[contenteditable] {
+  cursor: text !important;
+}
+
+/* Disabled elements */
+/*
+[disabled],
+[aria-disabled="true"] {
+  cursor: not-allowed !important;
+}
+*/
+
+/* ================ */
+/* Dark Mode Adjustments */
+/* ================ */
+@media (prefers-color-scheme: dark) {
+  /* Optional: Add dark-mode specific cursor adjustments here if needed */
+}
+
+/* ================ */
+/* Responsive Tweaks */
+/* ================ */
+@media (max-width: 767px) {
+  /* Mobile-specific cursor adjustments can go here */
+}

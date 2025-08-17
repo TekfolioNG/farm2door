@@ -1,0 +1,38 @@
+{
+    "name": "farm2door",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "nuxt build",
+        "dev": "nuxt dev",
+        "generate": "nuxt generate",
+        "preview": "nuxt preview",
+        "postinstall": "nuxt prepare"
+    },
+    "devDependencies": {
+        "@tailwindcss/postcss": "^4.1.11",
+        "@tailwindcss/typography": "^0.5.16",
+        "autoprefixer": "^10.4.21",
+        "esbuild": "^0.25.8",
+        "nuxt-icon": "^0.6.10",
+        "postcss": "^8.5.6",
+        "typescript": "5.8.3",
+        "vue": "^3.5.18",
+        "vue-router": "^4.5.1"
+    },
+    "dependencies": {
+        "@lottiefiles/dotlottie-vue": "^0.6.3",
+        "@nuxt/image": "^1.11.0",
+        "@nuxt/kit": "^3.18.0",
+        "@nuxt/ui": "^3.3.0",
+        "@paystack/inline-js": "^2.22.7",
+        "gsap": "^3.13.0",
+        "lucide-vue-next": "^0.474.0",
+        "nodemailer": "^6.10.1",
+        "nuxt": "4.0.2",
+        "tailwindcss": "^4.1.11"
+    },
+    "engines": {
+        "node": "^18.0.0 || >=20.0.0"
+    }
+}

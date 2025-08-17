@@ -1,0 +1,154 @@
+@import "@nuxt/ui";
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+/* ================ */
+/* Tekfolio Brand Colors */
+/* ================ */
+:root {
+  /* Primary Brand Colors */
+  --tekfolio-primary: #00007e;
+  --tekfolio-primary-rgb: 0, 0, 126;
+
+  /* Accent Colors */
+  --tekfolio-white: #f9fafb;
+  --tekfolio-white-rgb: 249, 250, 251;
+  --tekfolio-blue: #1a73e8;
+
+  /* Color Variations */
+  --tekfolio-primary-light: #0000a0;
+  --tekfolio-primary-dark: #000065;
+  --tekfolio-blue-light: #1a73e8;
+  --tekfolio-blue-dark: #1a73e8;
+}
+
+/* Dark mode color adjustments */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --tekfolio-white: #f9fafb;
+    --tekfolio-white-rgb: 249, 250, 251;
+  }
+}
+
+/* ================ */
+/* Utility Classes */
+/* ================ */
+.text-tekfolio-primary {
+  color: var(--tekfolio-primary);
+}
+
+.text-tekfolio-blue {
+  color: var(--tekfolio-blue);
+}
+
+.text-tekfolio-white {
+  color: var(--tekfolio-white);
+}
+
+.bg-tekfolio-primary {
+  background-color: var(--tekfolio-primary);
+}
+
+.bg-tekfolio-blue {
+  background-color: var(--tekfolio-blue);
+}
+
+.bg-tekfolio-white {
+  background-color: var(--tekfolio-white);
+}
+
+.border-tekfolio-primary {
+  border-color: var(--tekfolio-primary);
+}
+
+.border-tekfolio-blue {
+  border-color: var(--tekfolio-blue);
+}
+
+/* ================ */
+/* Base Styles */
+/* ================ */
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+  font-family: "Barlow", sans-serif;
+}
+
+h1,
+h2 {
+  font-family: "Barlow Condensed", sans-serif;
+}
+
+.barlow-condensed {
+  font-family: "Barlow Condensed", sans-serif;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Inter", sans-serif;
+}
+
+.hero h1,
+.hero-heading {
+  font-family: "Inter", sans-serif;
+  font-weight: 900;
+}
+
+/* ================ */
+/* Custom Tekfolio Cursors - DISABLED */
+/* ================ */
+/*
+* {
+  cursor: url("/cursors/square-mouse-pointer.svg") 12 12, auto;
+}
+
+/* Interactive elements */
+/*
+a,
+button,
+[role="button"],
+.clickable,
+input[type="submit"],
+input[type="button"],
+.nuxt-link-active,
+.router-link-active {
+  cursor: url("/cursors/pointer.svg") 12 12, pointer;
+}
+
+/* Input fields */
+/*
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+[contenteditable] {
+  cursor: text !important;
+}
+
+/* Disabled elements */
+/*
+[disabled],
+[aria-disabled="true"] {
+  cursor: not-allowed !important;
+}
+*/
+
+/* ================ */
+/* Dark Mode Adjustments */
+/* ================ */
+@media (prefers-color-scheme: dark) {
+  /* Optional: Add dark-mode specific cursor adjustments here if needed */
+}
+
+/* ================ */
+/* Responsive Tweaks */
+/* ================ */
+@media (max-width: 767px) {
+  /* Mobile-specific cursor adjustments can go here */
+}
