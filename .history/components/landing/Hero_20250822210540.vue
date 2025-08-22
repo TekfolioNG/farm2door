@@ -34,7 +34,7 @@
               </h1>
               <p
                 class="text-center md:text-left text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300 font-light leading-relaxed max-w-lg">
-                Fresh, premium ingredients delivered straight from local farms to your doorstep
+                Fresh, premium ingredients delivered straight from village farms to your doorstep
               </p>
             </div>
 
