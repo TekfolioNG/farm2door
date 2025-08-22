@@ -14,7 +14,7 @@
         <div class="flex items-center space-x-2 sm:space-x-4">
           <!-- Theme Toggle -->
           <button @click="toggleTheme"
-            class="p-2 rounded-lg bg-[#c6fc89] dark:bg-[#213b03] transition-colors duration-200">
+            class="p-2 rounded-lg bg-[#c6fc89] hover:bg-[#7ba54a] dark:bg-[#7ba54a] dark:hover:bg-[#7ba54a] transition-colors duration-200">
             <Sun v-if="isDarkMode" class="w-5 h-5 text-gray-600 dark:text-gray-300" />
             <Moon v-else class="w-5 h-5 text-gray-600 dark:text-gray-300" />
           </button>

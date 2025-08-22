@@ -16,52 +16,61 @@
     </div>
 
     <!-- Main Content Container -->
-    <div class="relative z-10 w-full min-h-screen flex items-center px-4 sm:px-6 lg:px-12 pt-24">
+    <div class="relative z-10 w-full min-h-screen flex items-center px-4 sm:px-6 lg:px-8 py-16">
       <div class="w-full max-w-7xl mx-auto">
         <!-- Two Column Layout -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
 
           <!-- Left Column - Content -->
-          <div class="order-2 lg:order-1 space-y-6 mt-8 lg:mt-32 lg:pr-8">
+          <div class="order-2 lg:order-1 space-y-8">
             <!-- Main Headline -->
-            <div class="space-y-4 transition-all duration-1000 transform"
+            <div class="space-y-6 transition-all duration-1000 transform"
               :class="isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'">
               <h1
-                class="font-['Barlow_Condensed'] text-center md:text-left text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[0.9] tracking-tight text-gray-900 dark:text-white">
+                class="font-['Barlow_Condensed'] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white">
                 Authentic Nigerian<br />
                 <span class="text-[#7ba54a]">heritage foods</span><br />
                 from trusted farms
               </h1>
               <p
-                class="text-center md:text-left text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300 font-light leading-relaxed max-w-lg">
+                class="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300 font-light leading-relaxed max-w-lg">
                 Fresh, premium ingredients delivered straight from village farms to your doorstep
               </p>
             </div>
 
-            <!-- Trust Badges - Now with sequential fade in/out -->
-            <div class="h-24 md:h-32 relative mt-6">
+            <!-- Trust Badges -->
+            <div class="space-y-4">
               <div v-for="(badge, index) in trustBadges" :key="badge.id"
-                class="absolute top-0 left-0 w-full transition-all duration-700" :class="{
-                  'opacity-100 translate-y-0': activeBadgeIndex === index,
-                  'opacity-0 -translate-y-4': activeBadgeIndex !== index
-                }" :style="{ transitionDelay: activeBadgeIndex === index ? '0ms' : '0ms' }">
-                <div class="flex items-center justify-center">
-                  <div
-                    class="flex items-center bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl px-4 py-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-100 dark:border-gray-700 max-w-md">
-                    <component :is="badge.icon"
-                      class="w-6 h-6 sm:w-7 sm:h-7 text-[#7ba54a] mr-4 flex-shrink-0 transition-transform duration-300" />
-                    <span class="text-base sm:text-lg font-medium text-gray-800 dark:text-gray-200 whitespace-nowrap">
-                      {{ badge.text }}
-                    </span>
-                  </div>
+                class="flex items-center group transition-all duration-1000 transform"
+                :class="isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'"
+                :style="{ transitionDelay: `${800 + (index * 200)}ms` }">
+                <div
+                  class="flex items-center bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl px-4 py-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-100 dark:border-gray-700">
+                  <component :is="badge.icon"
+                    class="w-6 h-6 sm:w-7 sm:h-7 text-[#7ba54a] mr-4 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
+                  <span class="text-base sm:text-lg font-medium text-gray-800 dark:text-gray-200 whitespace-nowrap">
+                    {{ badge.text }}
+                  </span>
                 </div>
               </div>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="pt-4 transition-all duration-1000 transform delay-1000"
+              :class="isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'">
+              <button @click="enterFarmMarket"
+                class="group relative px-8 py-4 sm:px-10 sm:py-5 bg-gradient-to-r from-[#7ba54a] to-[#6a9342] hover:from-[#6a9342] hover:to-[#5d7c3a] text-white font-['Barlow_Condensed'] font-bold text-lg sm:text-xl rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-[#7ba54a]/30 focus:outline-none focus:ring-4 focus:ring-[#7ba54a]/50 focus:ring-offset-2 dark:focus:ring-offset-gray-900 overflow-hidden">
+                <span class="relative z-10">Enter Farm Market</span>
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out" />
+              </button>
             </div>
           </div>
 
           <!-- Right Column - Product Showcase -->
-          <div class="order-1 lg:order-2 flex justify-center lg:justify-end lg:pl-8 -mt-2 lg:-mt-16">
-            <div class="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 transition-all duration-1000 transform"
+          <div class="order-1 lg:order-2 flex justify-center lg:justify-end">
+            <div
+              class="relative w-80 h-80 sm:w-96 sm:h-96 md:w-[28rem] md:h-[28rem] transition-all duration-1000 transform"
               :class="isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'">
 
               <!-- Main Featured Image -->
@@ -90,24 +99,13 @@
             </div>
           </div>
         </div>
-
-        <!-- Centered Button Below Columns -->
-        <div class="w-full flex justify-center transition-all duration-1000 transform delay-1000"
-          :class="isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'">
-          <button @click="enterFarmMarket"
-            class="group relative px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-[#7ba54a] to-[#6a9342] hover:from-[#6a9342] hover:to-[#5d7c3a] text-white font-['Barlow_Condensed'] font-bold text-lg sm:text-xl rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-[#7ba54a]/30 focus:outline-none focus:ring-4 focus:ring-[#7ba54a]/50 focus:ring-offset-2 dark:focus:ring-offset-gray-900 overflow-hidden animate-pulse">
-            <span class="relative z-10">Enter Farm Market</span>
-            <div
-              class="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out" />
-          </button>
-        </div>
       </div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-import { Award, ChefHat, Clock, Leaf, Users, Utensils } from 'lucide-vue-next'
+import { Award, Clock, Heart, Leaf, Users, Utensils } from 'lucide-vue-next'
 
 interface Product {
   id: number
@@ -141,7 +139,6 @@ const emit = defineEmits<{
 const isLoaded = ref(false)
 const currentFeaturedIndex = ref(0)
 const imageTransitioning = ref(false)
-const activeBadgeIndex = ref(0)
 
 // Enhanced trust badges
 const trustBadges = ref<TrustBadge[]>([
@@ -162,7 +159,7 @@ const trustBadges = ref<TrustBadge[]>([
   },
   {
     id: 4,
-    text: "Trusted by families & chefs worldwide",
+    text: "Trusted by 10,000+ families",
     icon: Users
   },
   {
@@ -172,28 +169,24 @@ const trustBadges = ref<TrustBadge[]>([
   },
   {
     id: 6,
-    text: "Serving hotels & restaurants globally",
-    icon: ChefHat
+    text: "Supporting local farmers",
+    icon: Heart
   }
 ])
 
-import deliverybus from "@/assets/img/farm-2dooor-bus.png"
-import chicken from "@/assets/img/farm-2dooor-chicken.png"
+import smokedkote from "@/assets/img/farm-2dooor-bus.png"
 import crayfish from "@/assets/img/farm-2dooor-crayfish.png"
 import smokedFish from "@/assets/img/farm-2dooor-driedfish.png"
-import garri from "@/assets/img/farm-2dooor-garri.png"
-import meat from "@/assets/img/farm-2dooor-meat.png"
-import order from "@/assets/img/farm-2dooor-order.png"
+import blackfish from "@/assets/img/farm-2dooor-garri.png"
+import stockfish from "@/assets/img/farm-2dooor-order.png"
 import palmOil from "@/assets/img/farm-2dooor-redoil.png"
-import sesonals from "@/assets/img/farm-2dooor-seasonala.png"
-import veggies from "@/assets/img/farm-2dooor-veggies.png"
 
 const products = ref<Product[]>([
   {
     id: 1,
     name: "Premium Stockfish",
     category: "Heritage Proteins",
-    image: order,
+    image: stockfish,
     alt: "Premium Nigerian stockfish"
   },
   {
@@ -221,45 +214,16 @@ const products = ref<Product[]>([
     id: 5,
     name: "Blackfish",
     category: "Heritage Proteins",
-    image: garri,
+    image: blackfish,
     alt: "Nigerian blackfish"
   },
   {
     id: 6,
     name: "Smoked Catfish",
     category: "Heritage Proteins",
-    image: deliverybus,
+    image: smokedkote,
     alt: "Smoked catfish"
-  },
-  {
-    id: 7,
-    name: "Fresh Chicken",
-    category: "Heritage Proteins",
-    image: chicken,
-    alt: "Fresh Nigerian chicken"
-  },
-  {
-    id: 8,
-    name: "Fresh Meat",
-    category: "Heritage Proteins",
-    image: meat,
-    alt: "Fresh Nigerian meat"
-  },
-  {
-    id: 9,
-    name: "Fresh Veggies",
-    category: "Heritage Proteins",
-    image: veggies,
-    alt: "Fresh Nigerian veggies"
-  },
-  {
-    id: 10,
-    name: "Seasonals",
-    category: "Heritage Proteins",
-    image: sesonals,
-    alt: "Fresh Nigerian seasonals"
   }
-
 ])
 
 // Fallback image in case others don't load
@@ -278,13 +242,6 @@ const featuredProduct = computed(() => {
 const enterFarmMarket = () => {
   emit('enterFarmMarket')
   navigateTo('/market')
-}
-
-// Rotate trust badges with fade in/out effect
-const startBadgeRotation = () => {
-  setInterval(() => {
-    activeBadgeIndex.value = (activeBadgeIndex.value + 1) % trustBadges.value.length;
-  }, 2500); // Change every 2.5 seconds
 }
 
 // Auto-rotate featured product with smooth transition
@@ -320,7 +277,6 @@ onMounted(() => {
   // Start product rotation after initial load
   setTimeout(() => {
     startProductRotation()
-    startBadgeRotation()
   }, 2000)
 })
 </script>
@@ -389,20 +345,6 @@ onMounted(() => {
   }
 }
 
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(123, 165, 74, 0.7);
-  }
-
-  70% {
-    box-shadow: 0 0 0 10px rgba(123, 165, 74, 0);
-  }
-
-  100% {
-    box-shadow: 0 0 0 0 rgba(123, 165, 74, 0);
-  }
-}
-
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
@@ -417,10 +359,6 @@ onMounted(() => {
 
 .animate-pulse-glow {
   animation: pulse-glow 4s ease-in-out infinite;
-}
-
-.animate-pulse {
-  animation: pulse 2s infinite;
 }
 
 /* Gradient radial utility */

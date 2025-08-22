@@ -177,23 +177,19 @@ const trustBadges = ref<TrustBadge[]>([
   }
 ])
 
-import deliverybus from "@/assets/img/farm-2dooor-bus.png"
-import chicken from "@/assets/img/farm-2dooor-chicken.png"
+import smokedkote from "@/assets/img/farm-2dooor-bus.png"
 import crayfish from "@/assets/img/farm-2dooor-crayfish.png"
 import smokedFish from "@/assets/img/farm-2dooor-driedfish.png"
-import garri from "@/assets/img/farm-2dooor-garri.png"
-import meat from "@/assets/img/farm-2dooor-meat.png"
-import order from "@/assets/img/farm-2dooor-order.png"
+import blackfish from "@/assets/img/farm-2dooor-garri.png"
+import stockfish from "@/assets/img/farm-2dooor-order.png"
 import palmOil from "@/assets/img/farm-2dooor-redoil.png"
-import sesonals from "@/assets/img/farm-2dooor-seasonala.png"
-import veggies from "@/assets/img/farm-2dooor-veggies.png"
 
 const products = ref<Product[]>([
   {
     id: 1,
     name: "Premium Stockfish",
     category: "Heritage Proteins",
-    image: order,
+    image: stockfish,
     alt: "Premium Nigerian stockfish"
   },
   {
@@ -221,45 +217,16 @@ const products = ref<Product[]>([
     id: 5,
     name: "Blackfish",
     category: "Heritage Proteins",
-    image: garri,
+    image: blackfish,
     alt: "Nigerian blackfish"
   },
   {
     id: 6,
     name: "Smoked Catfish",
     category: "Heritage Proteins",
-    image: deliverybus,
+    image: smokedkote,
     alt: "Smoked catfish"
-  },
-  {
-    id: 7,
-    name: "Fresh Chicken",
-    category: "Heritage Proteins",
-    image: chicken,
-    alt: "Fresh Nigerian chicken"
-  },
-  {
-    id: 8,
-    name: "Fresh Meat",
-    category: "Heritage Proteins",
-    image: meat,
-    alt: "Fresh Nigerian meat"
-  },
-  {
-    id: 9,
-    name: "Fresh Veggies",
-    category: "Heritage Proteins",
-    image: veggies,
-    alt: "Fresh Nigerian veggies"
-  },
-  {
-    id: 10,
-    name: "Seasonals",
-    category: "Heritage Proteins",
-    image: sesonals,
-    alt: "Fresh Nigerian seasonals"
   }
-
 ])
 
 // Fallback image in case others don't load

@@ -22,24 +22,24 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 items-center">
 
           <!-- Left Column - Content -->
-          <div class="order-2 lg:order-1 space-y-6 mt-8 lg:mt-32 lg:pr-8">
+          <div class="order-2 lg:order-1 space-y-6 mt-16 lg:mt-32 lg:pr-8">
             <!-- Main Headline -->
             <div class="space-y-4 transition-all duration-1000 transform"
               :class="isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'">
               <h1
-                class="font-['Barlow_Condensed'] text-center md:text-left text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[0.9] tracking-tight text-gray-900 dark:text-white">
+                class="font-['Barlow_Condensed'] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[0.9] tracking-tight text-gray-900 dark:text-white">
                 Authentic Nigerian<br />
                 <span class="text-[#7ba54a]">heritage foods</span><br />
                 from trusted farms
               </h1>
               <p
-                class="text-center md:text-left text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300 font-light leading-relaxed max-w-lg">
+                class="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300 font-light leading-relaxed max-w-lg">
                 Fresh, premium ingredients delivered straight from village farms to your doorstep
               </p>
             </div>
 
             <!-- Trust Badges - Now with sequential fade in/out -->
-            <div class="h-24 md:h-32 relative mt-6">
+            <div class="h-48 md:h-52 relative mt-6 mb-8">
               <div v-for="(badge, index) in trustBadges" :key="badge.id"
                 class="absolute top-0 left-0 w-full transition-all duration-700" :class="{
                   'opacity-100 translate-y-0': activeBadgeIndex === index,
@@ -60,7 +60,7 @@
           </div>
 
           <!-- Right Column - Product Showcase -->
-          <div class="order-1 lg:order-2 flex justify-center lg:justify-end lg:pl-8 -mt-2 lg:-mt-16">
+          <div class="order-1 lg:order-2 flex justify-center lg:justify-end lg:pl-8 -mt-8 lg:-mt-16">
             <div class="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 transition-all duration-1000 transform"
               :class="isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'">
 
@@ -177,23 +177,19 @@ const trustBadges = ref<TrustBadge[]>([
   }
 ])
 
-import deliverybus from "@/assets/img/farm-2dooor-bus.png"
-import chicken from "@/assets/img/farm-2dooor-chicken.png"
+import smokedkote from "@/assets/img/farm-2dooor-bus.png"
 import crayfish from "@/assets/img/farm-2dooor-crayfish.png"
 import smokedFish from "@/assets/img/farm-2dooor-driedfish.png"
-import garri from "@/assets/img/farm-2dooor-garri.png"
-import meat from "@/assets/img/farm-2dooor-meat.png"
-import order from "@/assets/img/farm-2dooor-order.png"
+import blackfish from "@/assets/img/farm-2dooor-garri.png"
+import stockfish from "@/assets/img/farm-2dooor-order.png"
 import palmOil from "@/assets/img/farm-2dooor-redoil.png"
-import sesonals from "@/assets/img/farm-2dooor-seasonala.png"
-import veggies from "@/assets/img/farm-2dooor-veggies.png"
 
 const products = ref<Product[]>([
   {
     id: 1,
     name: "Premium Stockfish",
     category: "Heritage Proteins",
-    image: order,
+    image: stockfish,
     alt: "Premium Nigerian stockfish"
   },
   {
@@ -221,45 +217,16 @@ const products = ref<Product[]>([
     id: 5,
     name: "Blackfish",
     category: "Heritage Proteins",
-    image: garri,
+    image: blackfish,
     alt: "Nigerian blackfish"
   },
   {
     id: 6,
     name: "Smoked Catfish",
     category: "Heritage Proteins",
-    image: deliverybus,
+    image: smokedkote,
     alt: "Smoked catfish"
-  },
-  {
-    id: 7,
-    name: "Fresh Chicken",
-    category: "Heritage Proteins",
-    image: chicken,
-    alt: "Fresh Nigerian chicken"
-  },
-  {
-    id: 8,
-    name: "Fresh Meat",
-    category: "Heritage Proteins",
-    image: meat,
-    alt: "Fresh Nigerian meat"
-  },
-  {
-    id: 9,
-    name: "Fresh Veggies",
-    category: "Heritage Proteins",
-    image: veggies,
-    alt: "Fresh Nigerian veggies"
-  },
-  {
-    id: 10,
-    name: "Seasonals",
-    category: "Heritage Proteins",
-    image: sesonals,
-    alt: "Fresh Nigerian seasonals"
   }
-
 ])
 
 // Fallback image in case others don't load
