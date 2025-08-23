@@ -181,13 +181,13 @@ import deliverybus from "@/assets/img/farm-2dooor-bus.png"
 import crayfish from "@/assets/img/farm-2dooor-crayfish2.png"
 import garri from "@/assets/img/farm-2dooor-garri.png"
 import meat from "@/assets/img/farm-2dooor-meat.png"
-import stockfish from "@/assets/img/farm-2dooor-oporoko.png"
 import order from "@/assets/img/farm-2dooor-order.png"
 import sesonals from "@/assets/img/farm-2dooor-seasonala.png"
 import veggies from "@/assets/img/farm-2dooor-veggies.png"
 import chicken from "@/assets/img/farm2dooor-chicken.png"
 import smokedFish from "@/assets/img/farm2dooor-dryfish.png"
 import palmOil from "@/assets/img/farm2dooor-redoil.png"
+import stockfish from "@assets/img/farm-2door-oporoko.png"
 
 const products = ref<Product[]>([
   {

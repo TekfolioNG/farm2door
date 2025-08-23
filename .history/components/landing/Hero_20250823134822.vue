@@ -178,16 +178,15 @@ const trustBadges = ref<TrustBadge[]>([
 ])
 
 import deliverybus from "@/assets/img/farm-2dooor-bus.png"
+import chicken from "@/assets/img/farm-2dooor-chicken.png"
 import crayfish from "@/assets/img/farm-2dooor-crayfish2.png"
+import smokedFish from "@/assets/img/farm-2dooor-driedfish.png"
 import garri from "@/assets/img/farm-2dooor-garri.png"
 import meat from "@/assets/img/farm-2dooor-meat.png"
-import stockfish from "@/assets/img/farm-2dooor-oporoko.png"
 import order from "@/assets/img/farm-2dooor-order.png"
+import palmOil from "@/assets/img/farm2dooor-redoil.png"
 import sesonals from "@/assets/img/farm-2dooor-seasonala.png"
 import veggies from "@/assets/img/farm-2dooor-veggies.png"
-import chicken from "@/assets/img/farm2dooor-chicken.png"
-import smokedFish from "@/assets/img/farm2dooor-dryfish.png"
-import palmOil from "@/assets/img/farm2dooor-redoil.png"
 
 const products = ref<Product[]>([
   {
@@ -259,13 +258,6 @@ const products = ref<Product[]>([
     category: "Heritage Proteins",
     image: sesonals,
     alt: "Fresh Nigerian seasonals"
-  },
-  {
-    id: 11,
-    name: "Stockfish",
-    category: "Heritage Proteins",
-    image: stockfish,
-    alt: "Fresh Nigerian stockfish"
   }
 
 ])
