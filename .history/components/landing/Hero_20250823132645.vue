@@ -39,7 +39,7 @@
             </div>
 
             <!-- Trust Badges - Now with sequential fade in/out -->
-            <div class="h-16 md:h-24 relative mt-6">
+            <div class="h-24 md:h-32 relative mt-6">
               <div v-for="(badge, index) in trustBadges" :key="badge.id"
                 class="absolute top-0 left-0 w-full transition-all duration-700" :class="{
                   'opacity-100 translate-y-0': activeBadgeIndex === index,
