@@ -107,7 +107,7 @@
 </template>
 
 <script setup lang="ts">
-import { Award, ChefHat, Clock, Leaf, Users, Utensils, Wallet } from 'lucide-vue-next'
+import { Award, ChefHat, Clock, Leaf, Users, Utensils } from 'lucide-vue-next'
 
 interface Product {
   id: number
@@ -174,11 +174,6 @@ const trustBadges = ref<TrustBadge[]>([
     id: 6,
     text: "Serving hotels & restaurants globally",
     icon: ChefHat
-  },
-  {
-    id: 7,
-    text: "Direct sourcing = better prices",
-    icon: Wallet
   }
 ])
 
