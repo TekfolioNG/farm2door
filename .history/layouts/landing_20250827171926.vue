@@ -17,7 +17,7 @@
 <script setup lang="ts">
 import { useAuthModal } from '~/composables/useAuthModal';
 // Make sure to import the AuthModal component
-import AuthModal from '~/components/landing/AuthModal.vue';
+import AuthModal from '~/components/AuthModal.vue';
 
 const { showAuthModal, closeAuthModal } = useAuthModal();
 const isDarkMode = ref(false);

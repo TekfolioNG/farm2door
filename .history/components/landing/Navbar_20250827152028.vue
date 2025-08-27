@@ -1,4 +1,3 @@
-<!-- components/landing/Navbar.vue -->
 <template>
   <nav
     class="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-[#9dcd5a]/10 to-transparent dark:from-[#9dcd5a]/5 dark:bg-gray-900/90 backdrop-blur-md border-b border-gray-200/20 dark:border-gray-700/20 transition-colors duration-300">
@@ -30,32 +29,73 @@
         </div>
       </div>
     </div>
+
+    <!-- Auth Modal -->
+    <AuthModal :showAuthModal="showAuthModal" :isDarkMode="isDarkMode" @close="showAuthModal = false"
+      @login="handleLoginSubmit" @signup="handleSignupSubmit" @social-login="handleSocialLogin" />
   </nav>
 </template>
 
 <script setup lang="ts">
-import { Moon, Sun, UserPlus } from 'lucide-vue-next';
-import { useAuthModal } from '~/composables/useAuthModal';
+import { Moon, Sun, UserPlus } from 'lucide-vue-next'
+import AuthModal from './AuthModal.vue'
 
-const { openAuthModal } = useAuthModal();
-const isDarkMode = ref(false);
+// Define types for our data structures
+interface LoginFormData {
+  email: string
+  password: string
+  rememberMe: boolean
+}
+
+interface SignupFormData {
+  email: string
+  password: string
+  confirmPassword: string
+  agreeToTerms: boolean
+}
+
+type SocialProvider = 'google' | 'microsoft'
+
+// Reactive state
+const isDarkMode = ref(false)
+const showAuthModal = ref(false)
 
 // Methods
 const toggleTheme = (): void => {
-  isDarkMode.value = !isDarkMode.value;
+  isDarkMode.value = !isDarkMode.value
+  // Toggle dark class on document
   if (typeof document !== 'undefined') {
-    document.documentElement.classList.toggle('dark', isDarkMode.value);
+    document.documentElement.classList.toggle('dark', isDarkMode.value)
   }
 }
 
 const handleAuth = (): void => {
-  openAuthModal();
+  showAuthModal.value = true
+}
+
+const handleLoginSubmit = (loginData: LoginFormData): void => {
+  // Handle login API call
+  console.log('Login data:', loginData)
+  showAuthModal.value = false
+}
+
+const handleSignupSubmit = (signupData: SignupFormData): void => {
+  // Handle signup API call
+  console.log('Signup data:', signupData)
+  showAuthModal.value = false
+}
+
+const handleSocialLogin = (provider: SocialProvider): void => {
+  // Handle social login
+  console.log('Social login with:', provider)
+  // Redirect to OAuth endpoint
 }
 
 // Lifecycle
 onMounted(() => {
+  // Check for existing theme preference
   if (typeof document !== 'undefined') {
-    isDarkMode.value = document.documentElement.classList.contains('dark');
+    isDarkMode.value = document.documentElement.classList.contains('dark')
   }
 })
 </script>
