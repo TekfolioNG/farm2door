@@ -1,0 +1,27 @@
+{
+  "name": "farm2door-api",
+  "version": "1.0.0",
+  "description": "Farm2Door Cloudflare Workers API with D1",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev --port 8787",
+    "deploy": "wrangler deploy",
+    "db:migrate": "wrangler d1 execute farm2door --file=schema.sql",
+    "db:seed": "wrangler d1 execute farm2door --file=seed.sql",
+    "test": "vitest",
+    "type-check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250830.0",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/jsonwebtoken": "^9.0.7",
+    "typescript": "^5.8.3",
+    "vitest": "^2.1.8",
+    "wrangler": "^4.33.1"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "hono": "^4.7.9",
+    "jsonwebtoken": "^9.0.2"
+  }
+}

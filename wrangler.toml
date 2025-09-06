@@ -1,0 +1,8 @@
+name = "farm2door-workers"
+main = "src/index.ts"
+compatibility_date = "2025-08-30"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "farm2door"
+database_id = "285fa696-54ae-4a89-8601-76357392e819"
